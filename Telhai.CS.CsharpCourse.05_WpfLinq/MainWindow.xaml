@@ -1,0 +1,132 @@
+﻿<Window x:Class="Telhai.CS.CsharpCourse._05_WpfLinq.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telhai.CS.CsharpCourse._05_WpfLinq"
+        mc:Ignorable="d"
+        Title="Songs" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200px"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- כותרת עליונה -->
+        <Label Name="lbl"
+               Grid.ColumnSpan="2"
+               Content="Songs"
+               FontSize="20"
+               Background="AliceBlue"
+               HorizontalAlignment="Stretch"
+               VerticalAlignment="Top"/>
+
+        <!-- צד שמאל: כפתורים -->
+        <StackPanel Grid.Row="1"
+                    Grid.Column="0"
+                    Background="AliceBlue">
+
+            <Button Margin="5"
+                    Content="Load 50 Songs"
+                    Click="LoadSongs_Click"/>
+
+            <Button Margin="5"
+                    Content="Delete Selected"
+                    Click="DeleteSong_Click"/>
+
+            <Button Margin="5"
+                    Content="Sort Duration ↑"
+                    Click="SortAscending_Click"/>
+
+            <Button Margin="5"
+                    Content="Sort Duration ↓"
+                    Click="SortDescending_Click"/>
+
+            <Button Margin="5"
+                    Content="Short Hits (&lt; 3 min)"
+                    Click="ShortHits_Click"/>
+
+            <Button Margin="5"
+                    Content="Group by Artist"
+                    Click="GroupByArtist_Click"/>
+        </StackPanel>
+
+        <!-- צד ימין: רשימה + הוספה + חיפוש + סטטיסטיקות -->
+        <Grid Grid.Row="1" Grid.Column="1" Background="WhiteSmoke" Margin="5,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <!-- ListBox -->
+                <RowDefinition Height="Auto"/>
+                <!-- Add Song -->
+                <RowDefinition Height="Auto"/>
+                <!-- Search -->
+                <RowDefinition Height="Auto"/>
+                <!-- Stats -->
+            </Grid.RowDefinitions>
+
+            <!-- רשימת השירים -->
+            <ListBox x:Name="SongsListBox"
+                     Grid.Row="0"
+                     Background="WhiteSmoke"
+                     HorizontalContentAlignment="Stretch"/>
+
+            <!-- הוספת שיר ע"י המשתמש -->
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        Margin="0,10,0,0">
+                <TextBox x:Name="ArtistTextBox"
+                         Width="150"
+                         Margin="0,0,10,0"
+                         ToolTip="Artist"/>
+                <TextBox x:Name="TitleTextBox"
+                         Width="200"
+                         Margin="0,0,10,0"
+                         ToolTip="Title"/>
+                <TextBox x:Name="DurationTextBox"
+                         Width="80"
+                         Margin="0,0,10,0"
+                         ToolTip="Duration between 1-10"/>
+                <Button Content="Add Song"
+                        Width="90"
+                        Click="AddSong_Click"/>
+            </StackPanel>
+
+            <!-- חיפוש -->
+            <StackPanel Grid.Row="2"
+                        Orientation="Horizontal"
+                        Margin="0,10,0,0">
+                <TextBox x:Name="SearchTextBox"
+                         Width="220"
+                         Margin="0,0,10,0"
+                         ToolTip="Search by Artist or Title"/>
+                <Button Content="Search"
+                        Width="80"
+                        Margin="0,0,10,0"
+                        Click="Search_Click"/>
+                <Button Content="Clear Search"
+                        Width="100"
+                        Click="ClearSearch_Click"/>
+            </StackPanel>
+
+            <!-- סטטיסטיקות LINQ -->
+            <StackPanel Grid.Row="3"
+                        Orientation="Horizontal"
+                        Margin="0,10,0,0">
+                <TextBlock Text="Total Duration: " FontWeight="Bold"/>
+                <TextBlock x:Name="TotalDurationTextBlock" Margin="5,0,20,0"/>
+
+                <TextBlock Text="Average Length: " FontWeight="Bold"/>
+                <TextBlock x:Name="AverageLengthTextBlock" Margin="5,0,20,0"/>
+
+                <TextBlock Text="Longest Song: " FontWeight="Bold"/>
+                <TextBlock x:Name="LongestSongTextBlock" Margin="5,0,0,0"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
