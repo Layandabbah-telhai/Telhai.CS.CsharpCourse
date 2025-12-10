@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telhai.CS.CsharpCourse.Draw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telhai.CS.CsharpCourse.05_WpfLinq", "Telhai.CS.CsharpCourse.05_WpfLinq\Telhai.CS.CsharpCourse.05_WpfLinq.csproj", "{CC6759FB-528D-4B56-8FC5-77F45B9A1039}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telhai.CS.CsharpCourse.DesignPattrens", "Telhai.CS.CsharpCourse.DesignPattrens\Telhai.CS.CsharpCourse.DesignPattrens.csproj", "{CDADD13A-BD67-4AEE-AE8A-263FBE32121A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{CC6759FB-528D-4B56-8FC5-77F45B9A1039}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC6759FB-528D-4B56-8FC5-77F45B9A1039}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC6759FB-528D-4B56-8FC5-77F45B9A1039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDADD13A-BD67-4AEE-AE8A-263FBE32121A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDADD13A-BD67-4AEE-AE8A-263FBE32121A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDADD13A-BD67-4AEE-AE8A-263FBE32121A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDADD13A-BD67-4AEE-AE8A-263FBE32121A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
